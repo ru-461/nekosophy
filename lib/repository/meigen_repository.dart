@@ -3,14 +3,14 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
-import 'package:nekosophy/models/Meigen.dart';
+import 'package:nekosophy/models/meigen.dart';
 
 final logger = Logger();
 
 class MeigenRepository {
   Future<List<Meigen>> fetchMeigens() async {
     // URL
-    Uri url = Uri.parse('https://api.theMeigenapi.com/v1/images/search');
+    Uri url = Uri.parse('https://meigen.doodlenote.net/api/json.php');
 
     // GETリクエスト
     final http.Response response = await http.get(url);

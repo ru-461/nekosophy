@@ -21,7 +21,7 @@ Meigen _$MeigenFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Meigen {
   String get meigen => throw _privateConstructorUsedError;
-  String get author => throw _privateConstructorUsedError;
+  String get auther => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -33,7 +33,7 @@ abstract class $MeigenCopyWith<$Res> {
   factory $MeigenCopyWith(Meigen value, $Res Function(Meigen) then) =
       _$MeigenCopyWithImpl<$Res, Meigen>;
   @useResult
-  $Res call({String meigen, String author});
+  $Res call({String meigen, String auther});
 }
 
 /// @nodoc
@@ -50,16 +50,16 @@ class _$MeigenCopyWithImpl<$Res, $Val extends Meigen>
   @override
   $Res call({
     Object? meigen = null,
-    Object? author = null,
+    Object? auther = null,
   }) {
     return _then(_value.copyWith(
       meigen: null == meigen
           ? _value.meigen
           : meigen // ignore: cast_nullable_to_non_nullable
               as String,
-      author: null == author
-          ? _value.author
-          : author // ignore: cast_nullable_to_non_nullable
+      auther: null == auther
+          ? _value.auther
+          : auther // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -71,7 +71,7 @@ abstract class _$$_MeigenCopyWith<$Res> implements $MeigenCopyWith<$Res> {
       __$$_MeigenCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String meigen, String author});
+  $Res call({String meigen, String auther});
 }
 
 /// @nodoc
@@ -85,16 +85,16 @@ class __$$_MeigenCopyWithImpl<$Res>
   @override
   $Res call({
     Object? meigen = null,
-    Object? author = null,
+    Object? auther = null,
   }) {
     return _then(_$_Meigen(
       meigen: null == meigen
           ? _value.meigen
           : meigen // ignore: cast_nullable_to_non_nullable
               as String,
-      author: null == author
-          ? _value.author
-          : author // ignore: cast_nullable_to_non_nullable
+      auther: null == auther
+          ? _value.auther
+          : auther // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -103,7 +103,7 @@ class __$$_MeigenCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Meigen implements _Meigen {
-  _$_Meigen({required this.meigen, required this.author});
+  _$_Meigen({required this.meigen, required this.auther});
 
   factory _$_Meigen.fromJson(Map<String, dynamic> json) =>
       _$$_MeigenFromJson(json);
@@ -111,11 +111,11 @@ class _$_Meigen implements _Meigen {
   @override
   final String meigen;
   @override
-  final String author;
+  final String auther;
 
   @override
   String toString() {
-    return 'Meigen(meigen: $meigen, author: $author)';
+    return 'Meigen(meigen: $meigen, auther: $auther)';
   }
 
   @override
@@ -124,12 +124,12 @@ class _$_Meigen implements _Meigen {
         (other.runtimeType == runtimeType &&
             other is _$_Meigen &&
             (identical(other.meigen, meigen) || other.meigen == meigen) &&
-            (identical(other.author, author) || other.author == author));
+            (identical(other.auther, auther) || other.auther == auther));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, meigen, author);
+  int get hashCode => Object.hash(runtimeType, meigen, auther);
 
   @JsonKey(ignore: true)
   @override
@@ -147,14 +147,14 @@ class _$_Meigen implements _Meigen {
 
 abstract class _Meigen implements Meigen {
   factory _Meigen(
-      {required final String meigen, required final String author}) = _$_Meigen;
+      {required final String meigen, required final String auther}) = _$_Meigen;
 
   factory _Meigen.fromJson(Map<String, dynamic> json) = _$_Meigen.fromJson;
 
   @override
   String get meigen;
   @override
-  String get author;
+  String get auther;
   @override
   @JsonKey(ignore: true)
   _$$_MeigenCopyWith<_$_Meigen> get copyWith =>

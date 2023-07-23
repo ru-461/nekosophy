@@ -5,7 +5,7 @@ part 'meigen.g.dart';
 
 @freezed
 class Meigen with _$Meigen {
-  factory Meigen({required String meigen, required String author}) = _Meigen;
+  factory Meigen({required String meigen, required String auther}) = _Meigen;
 
   factory Meigen.fromJson(Map<String, dynamic> json) => _$MeigenFromJson(json);
 }
