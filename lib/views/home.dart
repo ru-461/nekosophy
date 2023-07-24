@@ -24,6 +24,7 @@ class _HomeState extends State<Home> {
     // Cat
     final catList = await _catRepository.fetchCats();
     final catData = catList.first;
+    logger.d(catData);
 
     // Meigen
     final meigenList = await _meigenRepository.fetchMeigens();
@@ -47,11 +48,12 @@ class _HomeState extends State<Home> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
+            width: 400,
+            height: 450,
             padding: const EdgeInsets.symmetric(vertical: 5.0),
             child: Padding(
-              padding: const EdgeInsets.all(20),
-              child: Image.network(catImageUrl),
-            ),
+                padding: const EdgeInsets.all(20),
+                child: Image.network(catImageUrl)),
           ),
           Container(
             padding: const EdgeInsets.symmetric(vertical: 5.0),
