@@ -43,62 +43,62 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            width: 400,
-            height: 450,
-            padding: const EdgeInsets.symmetric(vertical: 5.0),
-            child: Padding(
-                padding: const EdgeInsets.all(20),
-                child: Image.network(catImageUrl)),
-          ),
-          Container(
-            padding: const EdgeInsets.symmetric(vertical: 5.0),
-            child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Column(
-                  children: [
-                    Text(
-                      meigen,
-                      style: const TextStyle(
-                          fontSize: 20, fontWeight: FontWeight.bold),
-                      textAlign: TextAlign.center,
-                    ),
-                    const SizedBox(height: 10.0),
-                    Text(
-                      'by $auther',
-                      style: const TextStyle(
-                          fontSize: 14.0, fontStyle: FontStyle.italic),
-                    ),
-                  ],
-                )),
-          ),
-          Container(
-            padding: const EdgeInsets.symmetric(vertical: 20.0),
-            child: Row(
+        body: Container(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                IconButton(
-                  onPressed: _reflesh,
-                  icon: const Icon(Icons.thumb_up_outlined),
-                  iconSize: 30.0,
-                  tooltip: 'Good',
+                Container(
+                  width: 400,
+                  height: 450,
+                  padding: const EdgeInsets.symmetric(vertical: 5.0),
+                  child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Image.network(catImageUrl)),
                 ),
-                const SizedBox(width: 20.0),
-                IconButton(
-                  onPressed: _reflesh,
-                  icon: const Icon(Icons.thumb_down_outlined),
-                  iconSize: 30.0,
-                  tooltip: 'Bad',
+                Container(
+                  padding: const EdgeInsets.symmetric(vertical: 5.0),
+                  child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Column(
+                        children: [
+                          Text(
+                            meigen,
+                            style: const TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                            textAlign: TextAlign.center,
+                          ),
+                          const SizedBox(height: 10.0),
+                          Text(
+                            'by $auther',
+                            style: const TextStyle(
+                                fontSize: 14.0, fontStyle: FontStyle.italic),
+                          ),
+                        ],
+                      )),
+                ),
+                Container(
+                  padding: const EdgeInsets.symmetric(vertical: 20.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      IconButton(
+                        onPressed: _reflesh,
+                        icon: const Icon(Icons.thumb_up_outlined),
+                        iconSize: 30.0,
+                        tooltip: 'Good',
+                      ),
+                      const SizedBox(width: 20.0),
+                      IconButton(
+                        onPressed: _reflesh,
+                        icon: const Icon(Icons.thumb_down_outlined),
+                        iconSize: 30.0,
+                        tooltip: 'Bad',
+                      ),
+                    ],
+                  ),
                 ),
               ],
-            ),
-          )
-        ],
-      ),
-    ));
+            )));
   }
 }
