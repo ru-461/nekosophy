@@ -24,7 +24,6 @@ class _HomeState extends State<Home> {
     // Cat
     final catList = await _catRepository.fetchCats();
     final catData = catList.first;
-    logger.d(catData);
 
     // Meigen
     final meigenList = await _meigenRepository.fetchMeigens();
