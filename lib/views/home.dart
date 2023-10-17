@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:logger/logger.dart';
 import 'package:nekosophy/repository/cat_repository.dart';
 import 'package:nekosophy/repository/meigen_repository.dart';
 
 final logger = Logger();
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class Home extends ConsumerWidget {
+  Home({super.key});
 
-  @override
-  State<Home> createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
   String catImageUrl = 'https://cdn2.thecatapi.com/images/9sk.jpg';
   String meigen = '';
   String auther = '';
@@ -29,18 +25,15 @@ class _HomeState extends State<Home> {
     final meigenList = await _meigenRepository.fetchMeigens();
     final meigenData = meigenList.first;
 
-    // 画像
-    setState(() {
-      // 画像を更新
-      catImageUrl = catData.url;
-      // 名言を更新
-      meigen = meigenData.meigen;
-      auther = meigenData.auther;
-    });
+    // 画像を更新
+    catImageUrl = catData.url;
+    // 名言を更新
+    meigen = meigenData.meigen;
+    auther = meigenData.auther;
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
         body: Container(
             padding: const EdgeInsets.all(16.0),
