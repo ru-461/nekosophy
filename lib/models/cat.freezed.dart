@@ -77,18 +77,18 @@ class _$CatCopyWithImpl<$Res, $Val extends Cat> implements $CatCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$$_CatCopyWith<$Res> implements $CatCopyWith<$Res> {
-  factory _$$_CatCopyWith(_$_Cat value, $Res Function(_$_Cat) then) =
-      __$$_CatCopyWithImpl<$Res>;
+abstract class _$$CatImplCopyWith<$Res> implements $CatCopyWith<$Res> {
+  factory _$$CatImplCopyWith(_$CatImpl value, $Res Function(_$CatImpl) then) =
+      __$$CatImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, String url, int width, int height});
 }
 
 /// @nodoc
-class __$$_CatCopyWithImpl<$Res> extends _$CatCopyWithImpl<$Res, _$_Cat>
-    implements _$$_CatCopyWith<$Res> {
-  __$$_CatCopyWithImpl(_$_Cat _value, $Res Function(_$_Cat) _then)
+class __$$CatImplCopyWithImpl<$Res> extends _$CatCopyWithImpl<$Res, _$CatImpl>
+    implements _$$CatImplCopyWith<$Res> {
+  __$$CatImplCopyWithImpl(_$CatImpl _value, $Res Function(_$CatImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -99,7 +99,7 @@ class __$$_CatCopyWithImpl<$Res> extends _$CatCopyWithImpl<$Res, _$_Cat>
     Object? width = null,
     Object? height = null,
   }) {
-    return _then(_$_Cat(
+    return _then(_$CatImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -122,14 +122,15 @@ class __$$_CatCopyWithImpl<$Res> extends _$CatCopyWithImpl<$Res, _$_Cat>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Cat implements _Cat {
-  _$_Cat(
+class _$CatImpl implements _Cat {
+  _$CatImpl(
       {required this.id,
       required this.url,
       required this.width,
       required this.height});
 
-  factory _$_Cat.fromJson(Map<String, dynamic> json) => _$$_CatFromJson(json);
+  factory _$CatImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CatImplFromJson(json);
 
   @override
   final String id;
@@ -149,7 +150,7 @@ class _$_Cat implements _Cat {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Cat &&
+            other is _$CatImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.url, url) || other.url == url) &&
             (identical(other.width, width) || other.width == width) &&
@@ -163,12 +164,12 @@ class _$_Cat implements _Cat {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CatCopyWith<_$_Cat> get copyWith =>
-      __$$_CatCopyWithImpl<_$_Cat>(this, _$identity);
+  _$$CatImplCopyWith<_$CatImpl> get copyWith =>
+      __$$CatImplCopyWithImpl<_$CatImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CatToJson(
+    return _$$CatImplToJson(
       this,
     );
   }
@@ -179,9 +180,9 @@ abstract class _Cat implements Cat {
       {required final String id,
       required final String url,
       required final int width,
-      required final int height}) = _$_Cat;
+      required final int height}) = _$CatImpl;
 
-  factory _Cat.fromJson(Map<String, dynamic> json) = _$_Cat.fromJson;
+  factory _Cat.fromJson(Map<String, dynamic> json) = _$CatImpl.fromJson;
 
   @override
   String get id;
@@ -193,5 +194,6 @@ abstract class _Cat implements Cat {
   int get height;
   @override
   @JsonKey(ignore: true)
-  _$$_CatCopyWith<_$_Cat> get copyWith => throw _privateConstructorUsedError;
+  _$$CatImplCopyWith<_$CatImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

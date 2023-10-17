@@ -6,12 +6,13 @@ part of 'meigen.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Meigen _$$_MeigenFromJson(Map<String, dynamic> json) => _$_Meigen(
+_$MeigenImpl _$$MeigenImplFromJson(Map<String, dynamic> json) => _$MeigenImpl(
       meigen: json['meigen'] as String,
       auther: json['auther'] as String,
     );
 
-Map<String, dynamic> _$$_MeigenToJson(_$_Meigen instance) => <String, dynamic>{
+Map<String, dynamic> _$$MeigenImplToJson(_$MeigenImpl instance) =>
+    <String, dynamic>{
       'meigen': instance.meigen,
       'auther': instance.auther,
     };

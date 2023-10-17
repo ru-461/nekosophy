@@ -66,19 +66,21 @@ class _$MeigenCopyWithImpl<$Res, $Val extends Meigen>
 }
 
 /// @nodoc
-abstract class _$$_MeigenCopyWith<$Res> implements $MeigenCopyWith<$Res> {
-  factory _$$_MeigenCopyWith(_$_Meigen value, $Res Function(_$_Meigen) then) =
-      __$$_MeigenCopyWithImpl<$Res>;
+abstract class _$$MeigenImplCopyWith<$Res> implements $MeigenCopyWith<$Res> {
+  factory _$$MeigenImplCopyWith(
+          _$MeigenImpl value, $Res Function(_$MeigenImpl) then) =
+      __$$MeigenImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String meigen, String auther});
 }
 
 /// @nodoc
-class __$$_MeigenCopyWithImpl<$Res>
-    extends _$MeigenCopyWithImpl<$Res, _$_Meigen>
-    implements _$$_MeigenCopyWith<$Res> {
-  __$$_MeigenCopyWithImpl(_$_Meigen _value, $Res Function(_$_Meigen) _then)
+class __$$MeigenImplCopyWithImpl<$Res>
+    extends _$MeigenCopyWithImpl<$Res, _$MeigenImpl>
+    implements _$$MeigenImplCopyWith<$Res> {
+  __$$MeigenImplCopyWithImpl(
+      _$MeigenImpl _value, $Res Function(_$MeigenImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -87,7 +89,7 @@ class __$$_MeigenCopyWithImpl<$Res>
     Object? meigen = null,
     Object? auther = null,
   }) {
-    return _then(_$_Meigen(
+    return _then(_$MeigenImpl(
       meigen: null == meigen
           ? _value.meigen
           : meigen // ignore: cast_nullable_to_non_nullable
@@ -102,11 +104,11 @@ class __$$_MeigenCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Meigen implements _Meigen {
-  _$_Meigen({required this.meigen, required this.auther});
+class _$MeigenImpl implements _Meigen {
+  _$MeigenImpl({required this.meigen, required this.auther});
 
-  factory _$_Meigen.fromJson(Map<String, dynamic> json) =>
-      _$$_MeigenFromJson(json);
+  factory _$MeigenImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MeigenImplFromJson(json);
 
   @override
   final String meigen;
@@ -122,7 +124,7 @@ class _$_Meigen implements _Meigen {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Meigen &&
+            other is _$MeigenImpl &&
             (identical(other.meigen, meigen) || other.meigen == meigen) &&
             (identical(other.auther, auther) || other.auther == auther));
   }
@@ -134,12 +136,12 @@ class _$_Meigen implements _Meigen {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MeigenCopyWith<_$_Meigen> get copyWith =>
-      __$$_MeigenCopyWithImpl<_$_Meigen>(this, _$identity);
+  _$$MeigenImplCopyWith<_$MeigenImpl> get copyWith =>
+      __$$MeigenImplCopyWithImpl<_$MeigenImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MeigenToJson(
+    return _$$MeigenImplToJson(
       this,
     );
   }
@@ -147,9 +149,10 @@ class _$_Meigen implements _Meigen {
 
 abstract class _Meigen implements Meigen {
   factory _Meigen(
-      {required final String meigen, required final String auther}) = _$_Meigen;
+      {required final String meigen,
+      required final String auther}) = _$MeigenImpl;
 
-  factory _Meigen.fromJson(Map<String, dynamic> json) = _$_Meigen.fromJson;
+  factory _Meigen.fromJson(Map<String, dynamic> json) = _$MeigenImpl.fromJson;
 
   @override
   String get meigen;
@@ -157,6 +160,6 @@ abstract class _Meigen implements Meigen {
   String get auther;
   @override
   @JsonKey(ignore: true)
-  _$$_MeigenCopyWith<_$_Meigen> get copyWith =>
+  _$$MeigenImplCopyWith<_$MeigenImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
