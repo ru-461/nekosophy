@@ -5,7 +5,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'cats_future_provider.g.dart';
 
 @riverpod
-Future<List<Cat>> catsFutureProvider(CatsFutureProviderRef ref) {
+Future<List<Cat>> catsFuture(CatsFutureRef ref) {
   final catRepository = CatRepository();
   return catRepository.fetchCats();
 }
