@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:logger/logger.dart';
+import 'package:nekosophy/models/cat.dart';
+import 'package:nekosophy/models/meigen.dart';
 import 'package:nekosophy/repository/cat_repository.dart';
 import 'package:nekosophy/repository/meigen_repository.dart';
 
@@ -16,13 +18,20 @@ class Home extends ConsumerWidget {
   final _catRepository = CatRepository();
   final _meigenRepository = MeigenRepository();
 
-  void _reflesh() async {
-    // Cat
-    final catList = await _catRepository.fetchCats();
+  void _reflesh(WidgetRef ref) async {
+    // API
+    final catListFuture = _catRepository.fetchCats();
+    final meigenListFuture = _meigenRepository.fetchMeigens();
+
+    // 待機
+    final List<dynamic> results =
+        await Future.wait([catListFuture, meigenListFuture]);
+
+    // 取り出し
+    final catList = results[0] as List<Cat>;
     final catData = catList.first;
 
-    // Meigen
-    final meigenList = await _meigenRepository.fetchMeigens();
+    final meigenList = results[1] as List<Meigen>;
     final meigenData = meigenList.first;
 
     // 画像を更新
@@ -91,6 +100,6 @@ class Home extends ConsumerWidget {
                   ),
                 ),
               ],
-            )));
+            )))
   }
 }
