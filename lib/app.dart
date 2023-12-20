@@ -11,7 +11,7 @@ class App extends StatelessWidget {
       theme: ThemeData(useMaterial3: true, brightness: Brightness.light),
       darkTheme: ThemeData(useMaterial3: true, brightness: Brightness.dark),
       themeMode: ThemeMode.system,
-      home: Home(),
+      home: const Home(),
     );
   }
 }
