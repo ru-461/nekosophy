@@ -3,9 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:logger/logger.dart';
 import 'package:nekosophy/models/cat.dart';
 import 'package:nekosophy/models/meigen.dart';
-import 'package:nekosophy/providers/cats_future_provider.dart';
 import 'package:nekosophy/providers/future_privider.dart';
-import 'package:nekosophy/providers/meigen_future_provider.dart';
 
 final logger = Logger();
 
@@ -15,8 +13,6 @@ class Home extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     // Ref
-    final catFuture = ref.watch(catsFutureProvider);
-    final meigenFuture = ref.watch(menegenFutureProvider);
     final future = ref.watch(futureProvider);
 
     return Scaffold(
