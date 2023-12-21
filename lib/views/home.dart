@@ -25,39 +25,7 @@ class Home extends ConsumerWidget {
               final meigen = data[1][0] as Meigen;
               final auther = meigen.auther;
 
-              return Column(
-                children: [
-                  Container(
-                    width: 400,
-                    height: 450,
-                    padding: const EdgeInsets.symmetric(vertical: 5.0),
-                    child: Padding(
-                        padding: const EdgeInsets.all(20.0),
-                        child: Image.network(cat.url)),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(vertical: 5.0),
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Column(
-                          children: [
-                            Text(
-                              meigen.meigen,
-                              style: const TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                              textAlign: TextAlign.center,
-                            ),
-                            const SizedBox(height: 10.0),
-                            Text(
-                              'by $auther',
-                              style: const TextStyle(
-                                  fontSize: 14.0, fontStyle: FontStyle.italic),
-                            ),
-                          ],
-                        )),
-                  ),
-                ],
-              );
+              return Content(cat: cat, meigen: meigen, auther: auther);
             },
             error: (error, stack) {
               return Text(error.toString());
@@ -84,7 +52,67 @@ class Home extends ConsumerWidget {
             ],
           ),
         ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Positioned(
+              child: IconButton(
+                  onPressed: () => ref.refresh(futureProvider),
+                  icon: const Icon(Icons.save_alt)),
+            )
+          ],
+        )
       ],
     ));
+  }
+}
+
+class Content extends StatelessWidget {
+  const Content({
+    super.key,
+    required this.cat,
+    required this.meigen,
+    required this.auther,
+  });
+
+  final Cat cat;
+  final Meigen meigen;
+  final String auther;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          width: 400,
+          height: 300,
+          padding: const EdgeInsets.symmetric(vertical: 5.0),
+          child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Image.network(cat.url)),
+        ),
+        Container(
+          padding: const EdgeInsets.symmetric(vertical: 5.0),
+          child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                children: [
+                  Text(
+                    meigen.meigen,
+                    style: const TextStyle(
+                        fontSize: 20, fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 10.0),
+                  Text(
+                    'by $auther',
+                    style: const TextStyle(
+                        fontSize: 14.0, fontStyle: FontStyle.italic),
+                  ),
+                ],
+              )),
+        ),
+      ],
+    );
   }
 }
