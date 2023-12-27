@@ -18,7 +18,7 @@ class Home extends ConsumerWidget {
     return Scaffold(
         body: Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: [
+      children: <Widget>[
         future.when(
             data: (data) {
               final cat = data[0][0] as Cat;
@@ -35,7 +35,7 @@ class Home extends ConsumerWidget {
           padding: const EdgeInsets.symmetric(vertical: 20.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: <Widget>[
               IconButton(
                 onPressed: () => ref.refresh(futureProvider),
                 icon: const Icon(Icons.thumb_up_outlined),
@@ -54,7 +54,7 @@ class Home extends ConsumerWidget {
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: <Widget>[
             Positioned(
               child: IconButton(
                   onPressed: () => ref.refresh(futureProvider),
@@ -82,7 +82,7 @@ class Content extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
+      children: <Widget>[
         Container(
           width: 400,
           height: 300,
@@ -96,7 +96,7 @@ class Content extends StatelessWidget {
           child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
-                children: [
+                children: <Widget>[
                   Text(
                     meigen.meigen,
                     style: const TextStyle(
