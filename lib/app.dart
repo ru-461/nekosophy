@@ -8,6 +8,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Nekosophy',
+      debugShowCheckedModeBanner: true,
       theme: ThemeData(useMaterial3: true, brightness: Brightness.light),
       darkTheme: ThemeData(useMaterial3: true, brightness: Brightness.dark),
       themeMode: ThemeMode.system,
