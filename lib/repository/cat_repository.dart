@@ -10,7 +10,7 @@ final logger = Logger();
 class CatRepository {
   Future<List<Cat>> fetchCats() async {
     // URL
-    Uri url = Uri.parse('https://api.thecatapi.com/v1/images/search');
+    final Uri url = Uri.parse('https://api.thecatapi.com/v1/images/search');
 
     // GETリクエスト
     final http.Response response = await http.get(url);
